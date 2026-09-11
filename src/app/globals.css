@@ -1,0 +1,188 @@
+@import 'tailwindcss';
+
+/* ------------------------------------------------------------------
+   AJ Fibertek design system
+   Brand colours preserved from the existing site:
+   navy #0C142E, accent red #DD0005, deep red #AF0000, text #202020
+   ------------------------------------------------------------------ */
+
+@theme {
+  /* Brand */
+  --color-navy-50: #f4f5f8;
+  --color-navy-100: #e3e6ee;
+  --color-navy-200: #c5ccdc;
+  --color-navy-300: #99a5c0;
+  --color-navy-400: #6b7a9e;
+  --color-navy-500: #4a5a80;
+  --color-navy-600: #334264;
+  --color-navy-700: #26314b;
+  --color-navy-800: #172038;
+  --color-navy-900: #0c142e;
+  --color-navy-950: #060b1c;
+
+  --color-brand-50: #fff1f1;
+  --color-brand-100: #ffdfdf;
+  --color-brand-200: #ffc5c5;
+  --color-brand-300: #ff9d9d;
+  --color-brand-400: #fb6464;
+  --color-brand-500: #f23434;
+  --color-brand-600: #dd0005;
+  --color-brand-700: #b90206;
+  --color-brand-800: #af0000;
+  --color-brand-900: #7f0608;
+  --color-brand-950: #460000;
+
+  --color-ink: #202020;
+  /* Muted body text. A solid colour rather than an opacity of --color-ink,
+     so contrast stays above 4.5:1 on white, on --color-surface and on the
+     tinted card backgrounds alike. */
+  --color-muted: #565656;
+  --color-surface: #f4f4f4;
+
+  /* Typography */
+  --font-sans:
+    var(--font-dm-sans), ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-display:
+    var(--font-poppins), ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  /* Radii */
+  --radius-card: 0.875rem;
+  --radius-pill: 999px;
+
+  /* Shadows — restrained, industrial rather than fluffy */
+  --shadow-card: 0 1px 2px rgba(12, 20, 46, 0.04), 0 8px 24px -12px rgba(12, 20, 46, 0.12);
+  --shadow-card-hover: 0 2px 4px rgba(12, 20, 46, 0.06), 0 20px 40px -16px rgba(12, 20, 46, 0.22);
+  --shadow-header: 0 1px 0 rgba(12, 20, 46, 0.08), 0 8px 24px -16px rgba(12, 20, 46, 0.3);
+
+  /* Motion */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-navy-100);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    background-color: #ffffff;
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    color: var(--color-navy-900);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Visible, high-contrast focus for keyboard users everywhere. */
+  :focus-visible {
+    outline: 3px solid var(--color-brand-600);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@layer components {
+  /* Page gutter + max width, used by <Container> */
+  .aj-container {
+    width: 100%;
+    max-width: 80rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .aj-container {
+      padding-inline: 2rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .aj-container {
+      padding-inline: 2.5rem;
+    }
+  }
+
+  /* Thin engineered rule used as a section accent */
+  .aj-rule {
+    width: 3rem;
+    height: 3px;
+    background: var(--color-brand-600);
+    border-radius: 2px;
+  }
+
+  /* Subtle blueprint grid for dark industrial sections */
+  .aj-grid-bg {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+}
+
+@layer utilities {
+  /* Reveal-on-scroll: starts hidden, IntersectionObserver adds .is-visible.
+     Falls back to visible when JS is unavailable (see <noscript> in layout). */
+  .aj-reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+      opacity 0.7s var(--ease-out-soft),
+      transform 0.7s var(--ease-out-soft);
+    will-change: opacity, transform;
+  }
+
+  .aj-reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .aj-reveal {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
