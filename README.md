@@ -1,8 +1,9 @@
 # AJ Fibertek India — Next.js rebuild
 
 A rebuild of [ajfibertek.co.in](https://ajfibertek.co.in/) on Next.js, React, TypeScript and
-Tailwind CSS. **All page copy is reproduced verbatim from the existing WordPress site.**
-Only the visual presentation, markup and technical SEO have changed.
+Tailwind CSS. **All page copy is reproduced verbatim from the existing WordPress site**,
+apart from the footer developer credit. Only the visual presentation, markup and technical
+SEO have changed.
 
 ## Stack
 
@@ -146,7 +147,13 @@ except where noted.
 
 ## Deliberate changes
 
-Everything here is presentation or plumbing. No page copy was altered.
+One copy change was requested; everything else here is presentation or plumbing.
+
+- **The footer developer credit now reads "movinnza"**, linking to
+  <https://movinnza.in/web-development/pune>. It replaces the previous
+  "DWPlaceSolutions" credit, and is the only altered string on the site. The
+  content-parity figure below is unaffected: link labels are not part of that
+  check, so the credit was never one of its 545 assertions.
 
 - **The four HAMAT pages are now in the menu.** They exist on the live site and are in its
   sitemap, but nothing links to them. They now sit under

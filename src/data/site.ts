@@ -90,6 +90,6 @@ export const FOOTER_LEGAL: NavItem[] = [
 
 export const FOOTER_COPYRIGHT = {
   text: '© 2025 AJ Fibertek • All Rights Reserved Design & Developed By',
-  creditLabel: 'DWPlaceSolutions',
-  creditHref: 'https://dwplacesolutions.com/',
+  creditLabel: 'movinnza',
+  creditHref: 'https://movinnza.in/web-development/pune',
 } as const;
