@@ -110,6 +110,19 @@
     text-wrap: pretty;
   }
 
+  /* Body copy is justified site-wide. */
+  p,
+  main li {
+    text-align: justify;
+    hyphens: auto;
+  }
+
+  /* Centred blocks stay justified, with the last line centred. */
+  .text-center p,
+  .text-center li {
+    text-align-last: center;
+  }
+
   /* Visible, high-contrast focus for keyboard users everywhere. */
   :focus-visible {
     outline: 3px solid var(--color-brand-600);

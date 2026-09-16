@@ -30,12 +30,12 @@ export const HOME_QUALITY = {
 
 /** Counter values read from the live Elementor counter widgets. */
 export const HOME_STATS = [
-  { value: 1200, suffix: '+', label: 'Tonnes Annual Manufacturing Capacity' },
+  { value: 2500, suffix: '+', label: 'Tonnes Annual Manufacturing Capacity' },
   { value: 98, suffix: '%', label: 'Client Satisfaction Rate' },
   { value: 30, suffix: '+', label: 'OEM & Tier 1 Customers Served' },
   { value: 5, suffix: '+', label: 'Countries We Export To' },
   { value: 100, suffix: '%', label: 'Custom-Built Solutions' },
-  { value: 50, suffix: '%', label: 'Current Capacity utilization' },
+  { value: 60, suffix: '%', label: 'Current Capacity utilization' },
 ] as const;
 
 export const HOME_CERTIFICATIONS = {
@@ -154,45 +154,6 @@ export const HOME_CLIENT_LOGOS = [
   { src: '/media/2026/04/7ozMGtvMg8vZ1743425593440-e1775473863861.png', alt: 'Client logo' },
 ] as const;
 
-export const HOME_CTA = {
-  title: 'Reach Out to Us for Your Manufacturing Needs Today!',
-  body: 'Our experience team is ready to assist you with your custom insulation, tooling or implant needs. Contact us now!',
-  cta: { label: 'Contact Us', href: '/contact-us/' },
-} as const;
-
-export const HOME_PROCESS = {
-  eyebrow: 'How it Work',
-  title: 'Our Product Manufacturing Process – 5 Key Steps',
-  intro:
-    'From raw material to ready-to-ship, our streamlined production process ensures quality and consistency at every stage:',
-  steps: [
-    {
-      title: '01. Raw Material Receipt',
-      body: 'We begin by sourcing and inspecting high-quality fibers for needling.',
-    },
-    {
-      title: '02. Needling',
-      body: 'Fibers are bonded through mechanical needling to form durable, high-performance mats.',
-    },
-    {
-      title: '03. Cutting',
-      body: 'Mats are precisely cut to the required shape and size for each application.',
-    },
-    {
-      title: '04. Final Inspection',
-      body: 'Each product undergoes a thorough quality check to meet strict industry standards.',
-    },
-    { title: '05. Packing & Shipping', body: 'The Complete Packaging Process Overview' },
-  ],
-  image: {
-    src: '/media/2025/05/aj-fibertek-ppt-2025-page-0014-6836fc2cceb64-scaled-e1748434246212.webp',
-    alt: '',
-    width: 2560,
-    height: 602,
-  },
-} as const;
-
-export const HOME_SUPPORT = { title: '24/7', subtitle: 'Customer Support' } as const;
 
 /* ------------------------------------------------------------------ */
 /* About Us                                                            */

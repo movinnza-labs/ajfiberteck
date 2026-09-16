@@ -4,7 +4,6 @@ import Container from '@/components/ui/Container';
 import PageHero from '@/components/sections/PageHero';
 import SectionHeading from '@/components/ui/SectionHeading';
 import ListingCard from '@/components/ui/ListingCard';
-import CtaBand from '@/components/sections/CtaBand';
 import { buildMetadata } from '@/lib/seo';
 import { SITE_URL } from '@/data/site';
 import { MEDICAL_PAGE } from '@/data/content';
@@ -135,7 +134,6 @@ export default function MedicalImplantPage() {
         </Container>
       </section>
 
-      <CtaBand />
       <MedicalJsonLd />
     </>
   );

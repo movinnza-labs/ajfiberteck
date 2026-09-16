@@ -104,7 +104,7 @@ export default function StatCounter({
         <span ref={numRef}>{value.toLocaleString('en-US')}</span>
         <span className="text-brand-500">{suffix}</span>
       </p>
-      <p className="mt-3 text-sm leading-snug text-navy-200">{label}</p>
+      <p className="mt-3 text-left text-sm leading-snug text-navy-200">{label}</p>
     </div>
   );
 }

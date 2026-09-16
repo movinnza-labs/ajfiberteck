@@ -62,7 +62,6 @@ export const MAIN_NAV: NavItem[] = [
           { label: 'HAMAT ULTRA', href: '/hamat-ultra/' },
         ],
       },
-      { label: 'Medical Implant Components', href: '/medical-implant/' },
       { label: 'Precision Sintered Tooling', href: '/sinteredtooling/' },
     ],
   },

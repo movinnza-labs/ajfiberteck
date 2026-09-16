@@ -6,8 +6,6 @@ import HomeAbout from '@/components/sections/HomeAbout';
 import HomeIndustries from '@/components/sections/HomeIndustries';
 import HomeProducts from '@/components/sections/HomeProducts';
 import HomeMission from '@/components/sections/HomeMission';
-import CtaBand from '@/components/sections/CtaBand';
-import ProcessTimeline from '@/components/sections/ProcessTimeline';
 
 import { buildMetadata } from '@/lib/seo';
 import { SITE_URL } from '@/data/site';
@@ -76,8 +74,6 @@ export default function HomePage() {
       <HomeIndustries />
       <HomeProducts />
       <HomeMission />
-      <CtaBand />
-      <ProcessTimeline />
       <HomeJsonLd />
     </>
   );

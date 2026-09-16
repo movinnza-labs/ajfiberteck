@@ -6,7 +6,6 @@ import Container from '@/components/ui/Container';
 import PageHero from '@/components/sections/PageHero';
 import SectionHeading from '@/components/ui/SectionHeading';
 import SpecTable from '@/components/ui/SpecTable';
-import CtaBand from '@/components/sections/CtaBand';
 import { buildMetadata } from '@/lib/seo';
 import { SITE_URL } from '@/data/site';
 import { INSULATION_PAGE } from '@/data/content';
@@ -184,7 +183,6 @@ export default function InsulationPage() {
         </Container>
       </section>
 
-      <CtaBand />
       <InsulationJsonLd />
     </>
   );

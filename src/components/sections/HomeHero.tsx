@@ -17,13 +17,13 @@ export default function HomeHero() {
       {/* Legibility scrim over the media */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-950/85 to-navy-950/40"
+        className="absolute inset-0 bg-gradient-to-r from-navy-950/80 via-navy-950/50 to-transparent"
       />
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-navy-950/60"
+        className="absolute inset-0 bg-gradient-to-t from-navy-950/70 via-transparent to-navy-950/30"
       />
-      <div aria-hidden="true" className="aj-grid-bg absolute inset-0 opacity-40" />
+      <div aria-hidden="true" className="aj-grid-bg absolute inset-0 opacity-20" />
 
       <Container className="relative">
         <div className="max-w-4xl">

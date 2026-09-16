@@ -5,7 +5,6 @@ import Container from '@/components/ui/Container';
 import PageHero from '@/components/sections/PageHero';
 import SectionHeading from '@/components/ui/SectionHeading';
 import ImagePlaceholder from '@/components/ui/ImagePlaceholder';
-import CtaBand from '@/components/sections/CtaBand';
 import { buildMetadata } from '@/lib/seo';
 import { SITE_URL } from '@/data/site';
 import { TOOLING_PAGE } from '@/data/content';
@@ -107,7 +106,6 @@ export default function SinteredToolingPage() {
         </Container>
       </section>
 
-      <CtaBand />
       <ToolingJsonLd />
     </>
   );
