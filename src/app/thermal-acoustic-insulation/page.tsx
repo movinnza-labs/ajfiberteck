@@ -58,6 +58,7 @@ export default function InsulationPage() {
               intro={INSULATION_PAGE.intro.body}
               align="center"
               fullWidth
+              introSize="base"
             />
           </div>
         </Container>
