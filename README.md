@@ -72,7 +72,7 @@ Trailing slashes are preserved (`trailingSlash: true`) so every indexed URL stil
 | `/thermal-acoustic-insulation/` | links through to the four HAMAT pages |
 | `/medical-implant/` | |
 | `/sinteredtooling/` | |
-| `/hamat-std/` `/hamat-adv/` `/hamat-super/` `/hamat-ultra/` | now reachable from the menu |
+| `/hamat-std/` `/hamat-adv/` `/hamat-super/` `/hamat-ultra/` | hidden: not linked anywhere, `noindex`, not in the sitemap |
 | `/contact-us/` | |
 | `/products/` | reproduced verbatim, served `noindex` (see below) |
 

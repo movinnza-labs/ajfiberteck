@@ -12,6 +12,8 @@ export const metadata: Metadata = buildMetadata({
     'HAMAT ULTRA High Silica Needle Mats are made from 100 % inorganic fiber and are non-combustible with high porosity and excellent sound absorption. High Silica Fiber, transformation temperature 1050°C.',
   path: '/hamat-ultra/',
   type: 'article',
+  // Hidden from navigation and search; reachable only by direct URL.
+  noindex: true,
   image: '/media/2025/05/5.png',
 });
 

@@ -227,17 +227,7 @@ export default function Header() {
               </ul>
             </nav>
 
-            <div className="flex items-center gap-3">
-              <Link
-                href="/contact-us/"
-                className={cn(
-                  'hidden rounded-full bg-brand-600 px-6 py-3 font-display text-sm font-semibold text-white shadow-[0_10px_30px_-12px_rgba(221,0,5,0.8)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-700 lg:inline-flex',
-                )}
-              >
-                Contact Us
-              </Link>
-              <MobileNav scrolled={scrolled} />
-            </div>
+            <MobileNav scrolled={scrolled} />
           </div>
         </Container>
       </div>

@@ -38,6 +38,56 @@ function AboutJsonLd() {
   );
 }
 
+/** Icons for the four pillars, in order: quality, innovation, people, partnership. */
+const PILLAR_ICON_PATHS = [
+  // Shield with check
+  [
+    'M12 3 4.5 6v5.5c0 4.6 3.2 8.6 7.5 9.5 4.3-.9 7.5-4.9 7.5-9.5V6L12 3Z',
+    'm8.75 12 2.25 2.25 4.25-4.5',
+  ],
+  // Light bulb
+  [
+    'M9 18h6',
+    'M10 21h4',
+    'M12 3a6 6 0 0 0-3.6 10.8c.7.55 1.1 1.35 1.1 2.2v.5h5v-.5c0-.85.4-1.65 1.1-2.2A6 6 0 0 0 12 3Z',
+  ],
+  // People
+  [
+    'M16 20v-1.5a3.5 3.5 0 0 0-3.5-3.5h-5A3.5 3.5 0 0 0 4 18.5V20',
+    'M10 11.5a3.25 3.25 0 1 0 0-6.5 3.25 3.25 0 0 0 0 6.5Z',
+    'M20 20v-1.5a3.5 3.5 0 0 0-2.5-3.35',
+    'M15.5 5.1a3.25 3.25 0 0 1 0 6.3',
+  ],
+  // Handshake
+  [
+    'm11 17 2 2a1 1 0 1 0 3-3',
+    'm14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4',
+    'm21 3 1 11h-2',
+    'M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3',
+    'M3 4h8',
+  ],
+];
+
+function PillarIcon({ index }: { index: number }) {
+  const paths = PILLAR_ICON_PATHS[index % PILLAR_ICON_PATHS.length];
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      className="h-7 w-7"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.75}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      {paths.map((d) => (
+        <path key={d} d={d} />
+      ))}
+    </svg>
+  );
+}
+
 export default function AboutPage() {
   return (
     <>
@@ -89,7 +139,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* Commitment: mission, vision, pillars */}
+      {/* Commitment: mission and vision */}
       <section className="relative overflow-hidden bg-navy-900 py-20 lg:py-28">
         <div aria-hidden="true" className="aj-grid-bg absolute inset-0 opacity-50" />
         <div
@@ -122,25 +172,6 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
-
-          {/* Pillars */}
-          <h3 className="aj-reveal mt-20 text-center font-display text-2xl font-bold text-white sm:text-3xl">
-            {ABOUT_PAGE.pillarsTitle}
-          </h3>
-          <div aria-hidden="true" className="aj-rule mx-auto mt-5" />
-
-          <div className="mt-12 grid gap-6 sm:grid-cols-2">
-            {ABOUT_PAGE.pillars.map((p, i) => (
-              <div
-                key={p.title}
-                className="aj-reveal rounded-2xl border border-white/10 bg-white/[0.03] p-7 transition-colors duration-300 hover:border-brand-600/50 hover:bg-white/[0.06]"
-                style={{ transitionDelay: `${i * 70}ms` }}
-              >
-                <h4 className="font-display text-base font-bold text-white">{p.title}</h4>
-                <p className="mt-4 text-sm leading-relaxed text-navy-200">{p.body}</p>
-              </div>
-            ))}
-          </div>
         </Container>
       </section>
 
@@ -148,10 +179,10 @@ export default function AboutPage() {
       <section className="bg-white py-20 lg:py-28">
         <Container>
           <div className="aj-reveal">
-            <SectionHeading title={ABOUT_PAGE.timelineTitle} align="center" />
+            <SectionHeading title={ABOUT_PAGE.timelineTitle} align="center" fullWidth />
           </div>
 
-          <ol className="relative mt-16 space-y-10 before:absolute before:left-[5.25rem] before:top-2 before:hidden before:h-[calc(100%-1rem)] before:w-px before:bg-navy-100 md:before:block">
+          <ol className="relative mt-16 space-y-10 before:absolute before:left-[8rem] before:top-2 before:hidden before:h-[calc(100%-1rem)] before:w-px before:bg-navy-100 md:before:block">
             {ABOUT_PAGE.timeline.map((entry, i) => (
               <li
                 key={entry.year}
@@ -159,7 +190,7 @@ export default function AboutPage() {
                 style={{ transitionDelay: `${i * 70}ms` }}
               >
                 {/* Year */}
-                <div className="flex items-center gap-4 md:w-[5.25rem] md:shrink-0 md:flex-col md:items-end md:gap-0">
+                <div className="flex items-center gap-4 md:w-[8rem] md:shrink-0 md:flex-col md:items-end md:gap-0 md:pr-7">
                   <span className="font-display text-2xl font-bold text-brand-600 md:text-3xl">
                     {entry.year}
                   </span>
@@ -169,7 +200,7 @@ export default function AboutPage() {
                 {/* Node */}
                 <span
                   aria-hidden="true"
-                  className="absolute left-[5.25rem] top-2.5 hidden h-3 w-3 -translate-x-1/2 rounded-full border-2 border-brand-600 bg-white md:block"
+                  className="absolute left-[8rem] top-2.5 hidden h-3 w-3 -translate-x-1/2 rounded-full border-2 border-brand-600 bg-white md:block"
                 />
 
                 {/* Content */}
@@ -197,6 +228,62 @@ export default function AboutPage() {
               </li>
             ))}
           </ol>
+        </Container>
+      </section>
+
+      {/* Foundational pillars */}
+      <section className="relative overflow-hidden bg-navy-900 py-20 lg:py-28">
+        <div aria-hidden="true" className="aj-grid-bg absolute inset-0 opacity-50" />
+        <div
+          aria-hidden="true"
+          className="absolute -right-32 top-1/4 h-96 w-96 rounded-full bg-brand-800/20 blur-3xl"
+        />
+
+        <Container className="relative">
+          <h2 className="aj-reveal text-center font-display text-2xl font-bold text-white sm:text-3xl">
+            {ABOUT_PAGE.pillarsTitle}
+          </h2>
+          <div aria-hidden="true" className="aj-rule mx-auto mt-5" />
+
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+            {ABOUT_PAGE.pillars.map((p, i) => {
+              // Titles carry their number ("1. Uncompromising Quality"); show it
+              // as a large badge and the rest as the heading.
+              const [, num = String(i + 1), title = p.title] =
+                p.title.match(/^(\d+)\.\s*(.*)$/) ?? [];
+              return (
+                <div
+                  key={p.title}
+                  className="aj-reveal group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.07] to-white/[0.02] p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-600/60 hover:shadow-[0_24px_48px_-24px_rgba(221,0,5,0.45)]"
+                  style={{ transitionDelay: `${i * 70}ms` }}
+                >
+                  <span
+                    aria-hidden="true"
+                    className="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-brand-600 transition-transform duration-500 group-hover:scale-x-100"
+                  />
+                  <span
+                    aria-hidden="true"
+                    className="pointer-events-none absolute right-5 top-4 font-display text-7xl font-bold leading-none text-white/15 transition-colors duration-300 group-hover:text-brand-500/35"
+                  >
+                    {num.padStart(2, '0')}
+                  </span>
+
+                  <div className="relative grid h-14 w-14 place-items-center rounded-xl bg-brand-600/15 text-brand-500 ring-1 ring-brand-600/30 transition-all duration-300 group-hover:bg-brand-600 group-hover:text-white group-hover:ring-brand-600">
+                    <PillarIcon index={i} />
+                  </div>
+
+                  <h3 className="relative mt-6 font-display text-lg font-bold leading-snug text-white xl:min-h-[3.25rem]">
+                    <span className="sr-only">{num}. </span>
+                    {title}
+                  </h3>
+                  <div aria-hidden="true" className="aj-rule mt-4 w-8" />
+                  <p className="relative mt-5 text-left text-sm leading-relaxed text-navy-200">
+                    {p.body}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
         </Container>
       </section>
 

@@ -36,10 +36,10 @@ AJ Fibertek operates three product divisions.
 
 All four variants are 100% inorganic fiber, non-combustible, binder free, density 120 ~ 160 Kg/m3 and thickness 3 ~ 20 mm.
 
-- [HAMAT STD](https://ajfibertek.co.in/hamat-std/): E-Glass. Transformation temperature 640°C. Filament diameter 9-13 um. Ignition loss ≤ 2.0%. Volume shrinkage 0%.
-- [HAMAT ADV](https://ajfibertek.co.in/hamat-adv/): ECR-Glass. Transformation temperature 761°C. Filament diameter 13-19 um. Ignition loss ≤ 2.0%. Volume shrinkage ≤ 1 %.
-- [HAMAT Super](https://ajfibertek.co.in/hamat-super/): Silica Fiber. Transformation temperature 850°C. Filament diameter 7-16 um. Ignition loss ≤ 9.0 %. Volume shrinkage ≤ 8 %.
-- [HAMAT ULTRA](https://ajfibertek.co.in/hamat-ultra/): High Silica Fiber. Transformation temperature 1050°C. Filament diameter > 6 um. Ignition loss ≤ 9%. Volume shrinkage Max 7 %.
+- HAMAT STD: E-Glass. Transformation temperature 640°C. Filament diameter 9-13 um. Ignition loss ≤ 2.0%. Volume shrinkage 0%.
+- HAMAT ADV: ECR-Glass. Transformation temperature 761°C. Filament diameter 13-19 um. Ignition loss ≤ 2.0%. Volume shrinkage ≤ 1 %.
+- HAMAT Super: Silica Fiber. Transformation temperature 850°C. Filament diameter 7-16 um. Ignition loss ≤ 9.0 %. Volume shrinkage ≤ 8 %.
+- HAMAT ULTRA: High Silica Fiber. Transformation temperature 1050°C. Filament diameter > 6 um. Ignition loss ≤ 9%. Volume shrinkage Max 7 %.
 
 Insulation product formats: Die Cut by Needle mat, Preform Roving, Preform by Needle Mat, Tubing by Needle Mat.
 
@@ -76,7 +76,7 @@ Materials used: E-Glass, ECR, and Silica fibers. HAMAT® insulation is trusted b
 - Address: AJ Fibertek India Pvt. Ltd. Gat No 44, Maval , Navalakh Umbre, Maval 410507 , Maharashtra India
 - Phone: +91-90229 26948
 - Email: info@ajfibertek.co.in
-- Open Time: Monday to Friday - 9:00 am to 5:00 pm
+- Office Time: Monday to Friday - 9:00 am to 5:00 pm
 - LinkedIn: https://www.linkedin.com/company/aj-fiberktek-india/
 - [Contact Us](https://ajfibertek.co.in/contact-us/)
 
@@ -87,8 +87,4 @@ Materials used: E-Glass, ECR, and Silica fibers. HAMAT® insulation is trusted b
 - [Thermal & Acoustic Insulation](https://ajfibertek.co.in/thermal-acoustic-insulation/)
 - [Medical Implant Components](https://ajfibertek.co.in/medical-implant/)
 - [Precision Sintered Tooling](https://ajfibertek.co.in/sinteredtooling/)
-- [HAMAT STD](https://ajfibertek.co.in/hamat-std/)
-- [HAMAT ADV](https://ajfibertek.co.in/hamat-adv/)
-- [HAMAT Super](https://ajfibertek.co.in/hamat-super/)
-- [HAMAT ULTRA](https://ajfibertek.co.in/hamat-ultra/)
 - [Contact Us](https://ajfibertek.co.in/contact-us/)

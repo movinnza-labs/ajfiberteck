@@ -1,32 +1,54 @@
 import Image from 'next/image';
 
+import { cn } from '@/lib/cn';
+
 type Logo = { readonly src: string; readonly alt: string };
 
+function LogoTrack({ logos, reverse }: { logos: readonly Logo[]; reverse?: boolean }) {
+  // The list is rendered twice and the track slides by exactly half its
+  // width, so the loop is seamless. The copy is hidden from assistive tech.
+  return (
+    <div className="aj-marquee">
+      <div className={cn('aj-marquee-track flex w-max', reverse && 'aj-marquee-reverse')}>
+        {[0, 1].map((copy) => (
+          <ul
+            key={copy}
+            aria-hidden={copy === 1 || undefined}
+            className="aj-marquee-list flex shrink-0 gap-4 pr-4"
+          >
+            {logos.map((logo) => (
+              <li
+                key={logo.src}
+                className="flex h-24 w-44 shrink-0 items-center justify-center rounded-2xl border border-navy-100 bg-white px-5 transition-shadow duration-300 hover:shadow-[var(--shadow-card)] sm:h-28 sm:w-52"
+              >
+                <Image
+                  src={logo.src}
+                  alt={copy === 1 ? '' : logo.alt}
+                  width={165}
+                  height={77}
+                  sizes="165px"
+                  className="h-14 w-auto max-w-[140px] object-contain"
+                />
+              </li>
+            ))}
+          </ul>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 /**
- * Client logo grid. Logos are greyscale at rest and regain colour on hover,
- * which keeps a mixed-quality logo set looking consistent.
+ * Client logos in full colour, as two continuously sliding rows: the first
+ * moves left, the second moves right. Hovering a row pauses it.
  */
 export default function LogoMarquee({ logos }: { logos: readonly Logo[] }) {
+  const half = Math.ceil(logos.length / 2);
+
   return (
-    // Cell separators come from borders on each tile rather than a gap over a
-    // tinted background, so a part-filled final row leaves no grey block.
-    <ul className="grid grid-cols-2 overflow-hidden rounded-2xl border-t border-l border-navy-100 bg-white sm:grid-cols-3 lg:grid-cols-5">
-      {logos.map((logo, i) => (
-        <li
-          key={logo.src + i}
-          className="group flex items-center justify-center border-r border-b border-navy-100 bg-white px-5 py-7 transition-colors duration-300 hover:bg-navy-50/70"
-        >
-          <Image
-            src={logo.src}
-            alt={logo.alt}
-            width={165}
-            height={77}
-            sizes="165px"
-            loading="lazy"
-            className="h-12 w-auto max-w-[130px] object-contain opacity-70 grayscale transition-all duration-500 group-hover:opacity-100 group-hover:grayscale-0"
-          />
-        </li>
-      ))}
-    </ul>
+    <div className="space-y-4">
+      <LogoTrack logos={logos.slice(0, half)} />
+      <LogoTrack logos={logos.slice(half)} reverse />
+    </div>
   );
 }

@@ -30,7 +30,7 @@ const ICONS: Record<string, React.ReactNode> = {
     </>
   ),
   // Ring drawn with opposite winding so the dial stays hollow under fill.
-  'Open Time': (
+  'Office Time': (
     <>
       <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 2a8 8 0 1 1 0 16 8 8 0 0 1 0-16Z" />
       <path d="M12.75 7a.75.75 0 0 0-1.5 0v5.25c0 .27.14.51.37.65l3.5 2.1a.75.75 0 1 0 .76-1.3l-3.13-1.87V7Z" />

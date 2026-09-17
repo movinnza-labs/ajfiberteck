@@ -10,6 +10,8 @@ type PageSeo = {
   path: string;
   image?: string;
   type?: 'website' | 'article';
+  /** Keep the page reachable but out of search results. */
+  noindex?: boolean;
 };
 
 /**
@@ -22,6 +24,7 @@ export function buildMetadata({
   path,
   image = OG_DEFAULT,
   type = 'website',
+  noindex = false,
 }: PageSeo): Metadata {
   const url = new URL(path, SITE_URL).toString();
   const imageUrl = new URL(image, SITE_URL).toString();
@@ -31,10 +34,10 @@ export function buildMetadata({
     description,
     alternates: { canonical: url },
     robots: {
-      index: true,
+      index: !noindex,
       follow: true,
       googleBot: {
-        index: true,
+        index: !noindex,
         follow: true,
         'max-image-preview': 'large',
         'max-snippet': -1,

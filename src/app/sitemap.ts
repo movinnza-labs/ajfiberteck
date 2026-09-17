@@ -18,10 +18,6 @@ const ROUTES: Array<{
   { path: '/thermal-acoustic-insulation/', priority: 0.9, changeFrequency: 'monthly' },
   { path: '/medical-implant/', priority: 0.8, changeFrequency: 'monthly' },
   { path: '/sinteredtooling/', priority: 0.8, changeFrequency: 'monthly' },
-  { path: '/hamat-std/', priority: 0.7, changeFrequency: 'yearly' },
-  { path: '/hamat-adv/', priority: 0.7, changeFrequency: 'yearly' },
-  { path: '/hamat-super/', priority: 0.7, changeFrequency: 'yearly' },
-  { path: '/hamat-ultra/', priority: 0.7, changeFrequency: 'yearly' },
   { path: '/contact-us/', priority: 0.8, changeFrequency: 'yearly' },
 ];
 

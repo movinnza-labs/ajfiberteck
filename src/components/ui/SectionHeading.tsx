@@ -38,6 +38,8 @@ export default function SectionHeading({
   as: Tag = 'h2',
   tone = 'dark',
   align = 'left',
+  fullWidth = false,
+  introSize = 'lg',
   className,
   titleClassName,
   children,
@@ -48,12 +50,22 @@ export default function SectionHeading({
   as?: 'h1' | 'h2' | 'h3';
   tone?: 'dark' | 'light';
   align?: 'left' | 'center';
+  /** Let the title and intro span the whole container instead of a reading measure. */
+  fullWidth?: boolean;
+  /** 'base' keeps the intro at body-text size (16px) on every screen. */
+  introSize?: 'lg' | 'base';
   className?: string;
   titleClassName?: string;
   children?: ReactNode;
 }) {
   return (
-    <div className={cn(align === 'center' && 'mx-auto max-w-3xl text-center', className)}>
+    <div
+      className={cn(
+        align === 'center' && 'mx-auto text-center',
+        align === 'center' && !fullWidth && 'max-w-3xl',
+        className,
+      )}
+    >
       {eyebrow && <Eyebrow tone={tone}>{eyebrow}</Eyebrow>}
       <Tag
         className={cn(
@@ -67,7 +79,9 @@ export default function SectionHeading({
       {intro && (
         <p
           className={cn(
-            'mt-5 max-w-3xl text-base leading-relaxed sm:text-lg',
+            'mt-5 text-base leading-relaxed',
+            introSize === 'lg' && 'sm:text-lg',
+            !fullWidth && 'max-w-3xl',
             align === 'center' && 'mx-auto',
             tone === 'light' ? 'text-navy-200' : 'text-muted',
           )}

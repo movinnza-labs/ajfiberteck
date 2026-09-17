@@ -278,92 +278,6 @@ export const INSULATION_PAGE = {
     title: 'Advanced Thermal & Acoustic Protection',
     body: 'AJ Fibertek India’s insulation division offers high-performance solutions built for extreme heat and noise environments. Our HAMAT® range—made from ECR glass and high-silica fibers—is trusted in automotive exhaust systems, industrial equipment, and power applications. Lightweight, non-combustible, and customizable, our insulation products meet stringent emission and performance standards while improving efficiency and durability across critical systems.',
   },
-  specHeading: 'Product Specification',
-  specTableHeading: 'Technical Characteristics',
-  products: [
-    {
-      href: '/hamat-std/',
-      wordmark: { src: '/media/2025/06/HAMAT-STD.png', alt: 'HAMAT STD', width: 800, height: 194 },
-      image: { src: '/media/2025/06/1stimage.png', alt: '', width: 249, height: 166 },
-      description:
-        'ECR-Glass Needle Mats are made from 100 % inorganic fiber and are non-combustible with high porosity and excellent sound absorption.',
-      specs: [
-        { label: 'Material', value: 'E-Glass' },
-        { label: 'Transformation Temp', value: '640°C' },
-        { label: 'Filament Diameter', value: '9-13 um' },
-        { label: 'Ignition Loss', value: '≤ 2.0%' },
-        { label: 'Volume Shrinkage', value: '0%' },
-        { label: 'Density (Kg/m3)', value: '120 ~ 160' },
-        { label: 'Thickness (mm)', value: '3 ~ 20' },
-        { label: 'Combustibility', value: 'Non-Combustible' },
-        { label: 'Binder', value: 'Binder Free' },
-      ],
-    },
-    {
-      href: '/hamat-adv/',
-      wordmark: { src: '/media/2025/06/HAMAT-ADV.png', alt: 'HAMAT ADV', width: 800, height: 194 },
-      image: { src: '/media/2025/05/2.png', alt: '', width: 249, height: 166 },
-      description:
-        'ECR-Glass Needle Mats are made from 100 % inorganic fiber and are non-combustible with high porosity and excellent sound absorption.',
-      specs: [
-        { label: 'Material', value: 'ECR-Glass' },
-        { label: 'Transformation Temp', value: '761°C' },
-        { label: 'Filament Diameter', value: '13-19 um' },
-        { label: 'Ignition Loss', value: '≤ 2.0%' },
-        { label: 'Volume Shrinkage', value: '≤ 1 %' },
-        { label: 'Density (Kg/m3)', value: '120 ~ 160' },
-        { label: 'Thickness (mm)', value: '3 ~ 20' },
-        { label: 'Combustibility', value: 'Non-Combustible' },
-        { label: 'Binder', value: 'Binder Free' },
-      ],
-    },
-    {
-      href: '/hamat-super/',
-      wordmark: {
-        src: '/media/2025/06/HAMAT-SUPER.png',
-        alt: 'HAMAT SUPER',
-        width: 800,
-        height: 196,
-      },
-      image: { src: '/media/2025/05/2.png', alt: '', width: 249, height: 166 },
-      description:
-        'High Silica Needle Mats are made from 100 % inorganic fiber and are non-combustible with high porosity and excellent sound absorption.',
-      specs: [
-        { label: 'Material', value: 'Silica Fiber' },
-        { label: 'Transformation Temp', value: '850°C' },
-        { label: 'Filament Diameter', value: '7-16 um' },
-        { label: 'Ignition Loss', value: '≤ 9.0 %' },
-        { label: 'Volume Shrinkage', value: '≤ 8 %' },
-        { label: 'Density (Kg/m3)', value: '120 ~ 160' },
-        { label: 'Thickness (mm)', value: '3 ~ 20' },
-        { label: 'Combustibility', value: 'Non-Combustible' },
-        { label: 'Binder', value: 'Binder Free' },
-      ],
-    },
-    {
-      href: '/hamat-ultra/',
-      wordmark: {
-        src: '/media/2025/06/HAMAT-ULTRA.png',
-        alt: 'HAMAT ULTRA',
-        width: 800,
-        height: 196,
-      },
-      image: { src: '/media/2025/05/1.png', alt: '', width: 249, height: 166 },
-      description:
-        'Silica Needle Mats are 100% inorganic fiber, non-combustibility with high porosity, excellent sound absorption. Special features with high temperature duration, low heat shrinkage and heat loss. As well as low thermal conductivity, excellent thermal insulation and good tensile strength and resistance for wind velocity.',
-      specs: [
-        { label: 'Material', value: 'High Silica Fiber' },
-        { label: 'Transformation Temp', value: '1050°C' },
-        { label: 'Filament Diameter', value: '> 6 um' },
-        { label: 'Ignition Loss', value: '≤ 9%' },
-        { label: 'Volume Shrinkage', value: 'Max 7 %' },
-        { label: 'Density (Kg/m3)', value: '120 ~ 160' },
-        { label: 'Thickness (mm)', value: '3 ~ 20' },
-        { label: 'Combustibility', value: 'Non-Combustible' },
-        { label: 'Binder', value: 'Binder Free' },
-      ],
-    },
-  ],
   formats: [
     { title: 'Die Cut by Needle mat', image: '/media/2025/07/Die-Cut-by-Needle-mat.png' },
     { title: 'Preform Roving', image: '/media/2025/07/Preform-Roving.png' },
@@ -371,6 +285,17 @@ export const INSULATION_PAGE = {
     { title: 'Tubing by Needle Mat', image: '/media/2025/07/Tubing-by-Needle-Mat.png' },
   ],
 } as const;
+
+/**
+ * HAMAT grade ladder, highest temperature first. Text taken from the range
+ * graphic supplied by AJ Fibertek. `sio2` is shown after "SiO₂".
+ */
+export const HAMAT_RANGE = [
+  { grade: 'ULTRA', code: 'HTCU', material: 'High Silica', sio2: '> 95%', temp: '1050°C' },
+  { grade: 'SUPER', code: 'HTCS', material: 'High Silica', sio2: '– 90%', temp: '850°C' },
+  { grade: 'ADV', code: 'HTCA', material: 'ECR-Glass', sio2: '– 56 ~ 62%', temp: '761°C' },
+  { grade: 'STD', code: null, material: 'E-Glass', sio2: '– 52 ~ 56%', temp: '640°C' },
+] as const;
 
 /* ------------------------------------------------------------------ */
 /* HAMAT product detail pages                                          */
@@ -732,7 +657,7 @@ export const CONTACT_PAGE = {
       value: 'info@ajfibertek.co.in',
       href: 'mailto:info@ajfibertek.co.in',
     },
-    { title: 'Open Time', value: 'Monday to Friday - 9:00 am to 5:00 pm', href: null },
+    { title: 'Office Time', value: 'Monday to Friday - 9:00 am to 5:00 pm', href: null },
   ],
   socialTitle: 'Social media',
   formTitle: 'Get in Touch',

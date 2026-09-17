@@ -198,4 +198,58 @@
       transform: none;
     }
   }
+
+  /* Downward chevron with a notched top, used by the HAMAT grade ladder. */
+  .aj-chevron {
+    clip-path: polygon(
+      0 0,
+      50% 1.25rem,
+      100% 0,
+      100% calc(100% - 1.25rem),
+      50% 100%,
+      0 calc(100% - 1.25rem)
+    );
+  }
+
+  /* Logo slider: the track holds the list twice and moves by half its width. */
+  .aj-marquee {
+    overflow: hidden;
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  }
+
+  .aj-marquee-track {
+    animation: aj-marquee 40s linear infinite;
+  }
+
+  .aj-marquee-reverse {
+    animation-direction: reverse;
+  }
+
+  .aj-marquee:hover .aj-marquee-track {
+    animation-play-state: paused;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .aj-marquee {
+      overflow-x: auto;
+      mask-image: none;
+    }
+
+    .aj-marquee-track {
+      animation: none;
+    }
+
+    .aj-marquee-list[aria-hidden] {
+      display: none;
+    }
+  }
+}
+
+@keyframes aj-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }

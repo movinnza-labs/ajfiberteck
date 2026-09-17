@@ -12,6 +12,8 @@ export const metadata: Metadata = buildMetadata({
     'HAMAT ADV ECR-Glass Needle Mats are made from 100 % inorganic fiber and are non-combustible with high porosity and excellent sound absorption. ECR-Glass, transformation temperature 761°C.',
   path: '/hamat-adv/',
   type: 'article',
+  // Hidden from navigation and search; reachable only by direct URL.
+  noindex: true,
   image: '/media/2025/05/2.png',
 });
 

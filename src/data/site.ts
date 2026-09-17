@@ -52,16 +52,7 @@ export const MAIN_NAV: NavItem[] = [
     label: 'Divisions and Products',
     href: '#',
     children: [
-      {
-        label: 'Thermal & Acoustic Insulation',
-        href: '/thermal-acoustic-insulation/',
-        children: [
-          { label: 'HAMAT STD', href: '/hamat-std/' },
-          { label: 'HAMAT ADV', href: '/hamat-adv/' },
-          { label: 'HAMAT Super', href: '/hamat-super/' },
-          { label: 'HAMAT ULTRA', href: '/hamat-ultra/' },
-        ],
-      },
+      { label: 'Thermal & Acoustic Insulation', href: '/thermal-acoustic-insulation/' },
       { label: 'Precision Sintered Tooling', href: '/sinteredtooling/' },
     ],
   },
@@ -78,7 +69,6 @@ export const FOOTER_QUICK_LINKS: NavItem[] = [
 /** Footer "Products" column — as on the existing site. */
 export const FOOTER_PRODUCTS: NavItem[] = [
   { label: 'Thermal & Acoustic Insulation', href: '/thermal-acoustic-insulation/' },
-  { label: 'Medical Implant Components', href: '/medical-implant/' },
   { label: 'Precision Sintered Tooling', href: '/sinteredtooling/' },
 ];
 

@@ -67,6 +67,8 @@ export default function SinteredToolingPage() {
               title={TOOLING_PAGE.intro.title}
               intro={TOOLING_PAGE.intro.body}
               align="center"
+              fullWidth
+              introSize="base"
             />
           </div>
         </Container>
