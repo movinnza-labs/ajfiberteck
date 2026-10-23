@@ -807,3 +807,27 @@ export const PRODUCTS_PAGE = {
   ctaPrimary: 'BOOK NOW',
   ctaSecondary: 'CONTACT US',
 } as const;
+
+export type AnnualReport = {
+  /** Financial year as printed on the report, e.g. "2024-25". */
+  year: string;
+  title: string;
+  /** PDF path under /public, e.g. "/media/annual-reports/annual-report-2024-25.pdf". */
+  file: string;
+};
+
+/**
+ * Annual reports, newest first. Drop each PDF into
+ * public/media/annual-reports/ and add an entry here.
+ */
+export const ANNUAL_REPORTS: AnnualReport[] = [];
+
+export const ANNUAL_REPORT_PAGE = {
+  h1: 'Annual Report',
+  breadcrumbLabel: 'Annual Report',
+  title: 'Annual Reports',
+  intro: 'Annual reports of AJ Fibertek India Pvt. Ltd., available to download as PDF.',
+  emptyTitle: 'Reports coming soon',
+  emptyBody:
+    'Our annual reports will be published here. For any request in the meantime, please contact us at info@ajfibertek.co.in.',
+} as const;

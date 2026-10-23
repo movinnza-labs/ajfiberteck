@@ -63,6 +63,7 @@ export const MAIN_NAV: NavItem[] = [
 export const FOOTER_QUICK_LINKS: NavItem[] = [
   { label: 'Home', href: '/' },
   { label: 'About Us', href: '/about-us/' },
+  { label: 'Annual Report', href: '/annual-report/' },
   { label: 'Contact us', href: '/contact-us/' },
 ];
 

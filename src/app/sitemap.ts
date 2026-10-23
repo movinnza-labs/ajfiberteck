@@ -19,6 +19,7 @@ const ROUTES: Array<{
   { path: '/medical-implant/', priority: 0.8, changeFrequency: 'monthly' },
   { path: '/sinteredtooling/', priority: 0.8, changeFrequency: 'monthly' },
   { path: '/contact-us/', priority: 0.8, changeFrequency: 'yearly' },
+  { path: '/annual-report/', priority: 0.6, changeFrequency: 'yearly' },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
