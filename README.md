@@ -188,6 +188,25 @@ One copy change was requested; everything else here is presentation or plumbing.
 | JSON-LD | 31 blocks, all valid JSON |
 | Redirects | legacy WordPress URLs and missing trailing slashes 308 correctly |
 
+## Deploying on Railway
+
+The app deploys from the [`Dockerfile`](Dockerfile) (configured in
+[`railway.json`](railway.json)), set up to keep Railway memory use low and flat:
+
+- `output: 'standalone'` in `next.config.ts`; the final image holds only the standalone
+  server, `.next/static` and `public/`.
+- `node:22-slim` rather than Alpine, so sharp releases memory it frees.
+- `sharp` and `@img/*` are copied into the image explicitly: output tracing misses
+  sharp 0.35's native libraries, and without them every image is served unoptimised.
+- `MALLOC_ARENA_MAX=2` is set in the image.
+- Images are served as WebP only and each size is generated once
+  (`minimumCacheTTL` of one year).
+- Healthcheck on `/`, so a failed deploy never replaces the running version.
+
+`railway.json` overrides the dashboard's build and start settings. In the Railway
+dashboard, also keep one replica, set a usage alert just above a normal month, and leave
+sleep mode off.
+
 ## Before deploying
 
 - Set the production domain in `SITE_URL` ([`src/data/site.ts`](src/data/site.ts)) if it

@@ -1,15 +1,25 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
+  // Self-contained server for the Docker image: only the files the app
+  // needs at runtime, so the container stays small and starts lean.
+  output: 'standalone',
+
   // The existing WordPress site serves every URL with a trailing slash
   // (e.g. /about-us/). Preserve that exactly so no indexed URL changes.
   trailingSlash: true,
 
   images: {
-    formats: ['image/avif', 'image/webp'],
+    // WebP only: AVIF encoding costs far more CPU and memory per image.
+    formats: ['image/webp'],
+    // Media only changes on deploy, so generate each image size once.
+    minimumCacheTTL: 31536000,
     deviceSizes: [320, 375, 414, 640, 768, 1024, 1280, 1440, 1920],
     imageSizes: [64, 96, 128, 165, 249, 265, 384],
   },
+
+  // Caps build workers so the build does not spike memory.
+  experimental: { cpus: 4 },
 
   poweredByHeader: false,
 
